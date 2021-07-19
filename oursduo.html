@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script defer src="./index.js"></script>
-    <title>Acceuil</title>
+    <title>Ours duo</title>
 </head>
 
 <body>
@@ -31,44 +31,51 @@
                 </p>
             </form>
 
-
             <div class="panier"><a href="panier.html"><div class="btn_panier">Panier</div></a></div>
     </header>
 
-    <section class="choix_produit">
-        <div class="choix_produit1">
-            <a href="oursbrun.html" title="Venez me découvrir !">
-                <div class="choix_ours1">
-                <h2>Ours brun</h2>
-                </div>
-            </a>
-
-            <a href="ourscreme.html" title="Venez me découvrir !">
-                <div class="choix_ours2">
-                <h2>Ours crème</h2>
-                </div>
-            </a>
-
-            <a href="oursduo.html" title="Venez me découvrir !">
-                <div class="choix_ours3">
+    <section id="ours_duo">
+        <h2 class="titre-trans">.</h2>
+        <section class="description">
+            <div class="description_photo">
+                <img src="image/teddy_3.jpg" aria-label="ours_duo" alt="ours_duo">
+            </div>
+    
+            <div class="description_ours">
+    
+                <div class="description_intro">
                 <h2>Ours duo</h2>
+                <p>Craquez pour ce mignon petit ours ! Choisissez sa taille et décidez de lui broder son nom ! 
+                    Offrez le accompagné d'une carte, ou garder le près de vous. Il saura vous donner tout son amour !
+                </p>
                 </div>
-                </a>
+    
+    
+                <div class="description_choix">
+                    <form method="post" class="taille">
+                        <p>
+                        <label for="nom_ours_duo">Son nom</label>
+                        <input type="text" name="nom" id="nom_ours_duo" placeholder="15 caractères max"/>
+                        <br/>
+                        <label for="formulaire_taille_ours_duo">Choisissez sa taille</label>
+                        <select name="formulaire_taille" id="formulaire_taille_ours_duo">
+                            <option value="taille1">XS (hauteur:30cm)</option>
+                            <option value="taille2">S (hauteur: 50cm)</option>
+                            <option value="taille3">M (hauteur: 80cm)</option>
+                            <option value="taille4">L (hauteur: 120cm)</option>
+                            <option value="taille5">XL (hauteur: 160cm)</option>
+                        </select>
+                        </p>
+                    </form>
                 </div>
-
-        <div class="choix_produit2">
-            <a href="oursteeshirt.html" title="Venez me découvrir !">
-            <div class="choix_ours4">
-                <h2>Ours tee-shirt</h2>
+    
+                <div class="prix_ours">
+                    <h2>Prix: 40€</h2>
+                </div>
+    
+            <div class="ajouter"><input type="button" value="Ajoutez"></div>
             </div>
-            </a>
-
-            <a href="oursdoux.html" title="Venez me découvrir !">
-            <div class="choix_ours5">
-                <h2>Ours doux</h2>
-            </div>
-            </a>
-        </div>
+        </section>
     </section>
 
     <footer>
@@ -77,7 +84,7 @@
             <a class="social" href="https://www.facebook.com/" rel="nofollow" aria-label="facebook" title="cliquez-ici"><span><i class="fab fa-facebook"></i></span></a>
             <a class="social" href="https://www.instagram.com/?hl=fr" rel="nofollow" aria-label="instagram" title="cliquez-ici"><span><i class="fab fa-instagram"></i></span></a>
         </div>
-
+    
         <div class="informations">
             <div class="information1">
             <h2>Pour mieux nous connaitre</h2>
@@ -86,7 +93,7 @@
                 <li><a href="acceuil.html" rel="nofollow">Condition générale de vente</a></li>
             </ul>
             </div>
-
+    
             <div class="information2">
             <h2>Moyen de paiement  Orinoco</h2>
             <ul>
@@ -95,7 +102,7 @@
                 <li><a href="acceuil.html" rel="nofollow">Chèque cadeaux</a></li>
             </ul>
             </div>
-
+    
             <div class="information3">
             <h2>Besoin d'aide</h2>
             <ul>
@@ -106,5 +113,5 @@
             </div>
         </div>
     </footer>
-</div>
-</body>
+    </div>
+    </body>
