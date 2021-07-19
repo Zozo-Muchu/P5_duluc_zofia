@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script defer src="./index.js"></script>
+    <title>Ours doux</title>
+</head>
+
+<body>
+<div class="bloc_page">
+<header>
+
+    <h1><a href="acceuil.html"><i class="fas fa-shopping-cart"></i> Orinoco </a></h1>
+
+        <form method="post" class="formulaire_acceuil">
+            <p>
+            <label for="categorie">Toutes les catégories</label>
+            <select name="categorie" id="categorie">
+                <option value="ours1">Ours brun</option>
+                <option value="ours2">Ours crème</option>
+                <option value="ours3">Ours duo</option>
+                <option value="ours4">Ours tee-shirt</option>
+                <option value="ours5">Ours doux</option>
+            </select>
+            </p>
+        </form>
+
+
+        <div class="acceuil"><a href="acceuil.html"><div class="btn_acceuil">Acceuil</div></a></div>
+</header>
+
+<!--bouton pour appeler les produits-->
+<button class="btn" onclick='populateTableList()'>Tout voir</button>
+<!--Fin de la commande du bouton-->
+
+<!--Structure du tableau-->
+<table class="tableau">
+    <thead>
+        <tr>
+    <th>Photo</th>
+    <th>Nom</th>
+    <th>Prix</th>
+</tr>
+</thead>
+<!--corps du tableau avec la liste des produits-->
+<tbody id="productList">
+</tbody>
+</table>
+<!--Fin du tableau-->
+
+<footer>
+    <div class="social">
+        <a class="social" href="https://twitter.com/" rel="nofollow" aria-label="twitter" title="cliquez-ici"><span><i class="fab fa-twitter"></i></span></a>
+        <a class="social" href="https://www.facebook.com/" rel="nofollow" aria-label="facebook" title="cliquez-ici"><span><i class="fab fa-facebook"></i></span></a>
+        <a class="social" href="https://www.instagram.com/?hl=fr" rel="nofollow" aria-label="instagram" title="cliquez-ici"><span><i class="fab fa-instagram"></i></span></a>
+    </div>
+
+    <div class="informations">
+        <div class="information1">
+        <h2>Pour mieux nous connaitre</h2>
+        <ul>
+            <li>À propos de Orinoco</li>
+            <li>Condition générale de vente</li>
+        </ul>
+        </div>
+
+        <div class="information2">
+        <h2>Moyen de paiement  Orinoco</h2>
+        <ul>
+            <li>Carte de paiement</li>
+            <li>Paiement en plusieurs fois</li>
+            <li>Chèque cadeaux</li>
+        </ul>
+        </div>
+
+        <div class="information3">
+        <h2>Besoin d'aide</h2>
+        <ul>
+            <li>Suivre les commandes</li>
+            <li>Retour et remplacement</li>
+            <li>Tarif et option de livraison</li>
+        </ul>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
