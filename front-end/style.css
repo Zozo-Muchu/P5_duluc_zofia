@@ -58,6 +58,16 @@ html {
   -webkit-box-shadow: 6px 6px 6px #aba598;
           box-shadow: 6px 6px 6px #aba598;
   font-family: "abelregular", "Arial", "sans-serif";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /*---------Header-------------*/
@@ -259,130 +269,34 @@ footer .informations .information3 li {
 /*------------------------------Fin de code commun -----------------*/
 /*------------------------------Acceuil*---------------------------*/
 .choix_produit {
-  width: 100%;
+  width: 70%;
   height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 3%;
 }
 
-.choix_produit h2 {
+.choix_produit img {
+  width: 100%;
+  height: 23rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.choix_produit h2,
+.choix_produit div {
   width: 100%;
   margin: 0;
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 2% 0 2% 0;
   background-color: white;
-  border-radius: 20px 20px 0 0;
   background-color: #c4cedc;
 }
 
-.choix_produit .choix_produit1 {
-  width: 100%;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 4% 0 10% 0;
-}
-
-.choix_produit .choix_produit1 a {
-  width: 30%;
-  height: 300px;
-}
-
-.choix_produit .choix_produit1 .choix_ours1,
-.choix_produit .choix_produit1 .choix_ours2,
-.choix_produit .choix_produit1 .choix_ours3 {
-  border: 2px #aba598 solid;
-  -webkit-box-shadow: 6px 6px 6px #aba598;
-          box-shadow: 6px 6px 6px #aba598;
-  width: 100%;
-  height: 300px;
-  border-radius: 20px;
-  background-size: cover;
-  opacity: 0.8;
-}
-
-.choix_produit .choix_produit1 .choix_ours1:hover,
-.choix_produit .choix_produit1 .choix_ours2:hover,
-.choix_produit .choix_produit1 .choix_ours3:hover {
-  opacity: 1;
-  -webkit-transition: opacity 0.2s ease 0s;
-  transition: opacity 0.2s ease 0s;
-}
-
-.choix_produit .choix_produit1 .choix_ours1 h2,
-.choix_produit .choix_produit1 .choix_ours2 h2,
-.choix_produit .choix_produit1 .choix_ours3 h2 {
-  border: 1px solid #aba598;
-  -webkit-box-shadow: 1px 1px 1px #aba598;
-          box-shadow: 1px 1px 1px #aba598;
-}
-
-.choix_produit .choix_produit1 .choix_ours1 {
-  background-image: url(image/teddy_1.jpg);
-  background-position: center;
-}
-
-.choix_produit .choix_produit1 .choix_ours2 {
-  background-image: url(image/teddy_2.jpg);
-  background-position: center;
-}
-
-.choix_produit .choix_produit1 .choix_ours3 {
-  background-image: url(image/teddy_3.jpg);
-  background-position: left;
-}
-
-.choix_produit .choix_produit2 {
-  width: 100%;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-bottom: 5%;
-}
-
-.choix_produit .choix_produit2 a {
-  width: 30%;
-  height: 300px;
-}
-
-.choix_produit .choix_produit2 .choix_ours4,
-.choix_produit .choix_produit2 .choix_ours5 {
-  border: 2px #aba598 solid;
-  -webkit-box-shadow: 6px 6px 6px #aba598;
-          box-shadow: 6px 6px 6px #aba598;
-  width: 100%;
-  height: 300px;
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.8;
-}
-
-.choix_produit .choix_produit2 .choix_ours4:hover,
-.choix_produit .choix_produit2 .choix_ours5:hover {
-  opacity: 1;
-  -webkit-transition: opacity 0.2s ease 0s;
-  transition: opacity 0.2s ease 0s;
-}
-
-.choix_produit .choix_produit2 .choix_ours4 {
-  background-image: url(image/teddy_4.jpg);
-  background-position: center;
-}
-
-.choix_produit .choix_produit2 .choix_ours5 {
-  background-image: url(image/teddy_5.jpg);
-  background-position: left;
+.choix_produit .price {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 110%;
 }
 
 /* -------------------------------Fin acceuil ---------------------------------*/

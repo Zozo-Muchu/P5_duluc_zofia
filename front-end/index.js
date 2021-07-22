@@ -1,4 +1,4 @@
-/*----------------prix des ours celon taille--------------------*/
+/*---------------- essai prix des ours celon taille--------------------
 const oursPrix = document.querySelector(".ours_prix");
 const trente = document.getElementById("trente");
 const cinquante = document.getElementById("cinquante");
@@ -20,6 +20,7 @@ soixante.addEventListener("click", () => {
 quatrevingt.addEventListener("click", () => {
   oursPrix.innerHTML = 45 + "€";
 });
+---*/
 
 /*-----------------------fin prix des ours celon taille -----------*/
 
@@ -53,3 +54,19 @@ function populateTableList() {
 document.getElementById("productList").innerHTML = listOfProducts;
 
 --*/
+/*-----------------appel du back end dans acceuil------------------------*/
+let url = " http://localhost:3000/api/teddies";
+let list_teddy = "";
+fetch(url).then((response) =>
+  response.json().then((data) => {
+    for (let teddy of data) {
+      list_teddy += `<li> <a class="button">
+        <img src="${teddy.imageUrl}"/>
+        <h2>${teddy.name}</h2>
+        <div>${teddy.description}"</div>
+        <div class="price">${teddy.price}€</div>`;
+    }
+    console.log(list_teddy);
+    document.querySelector("#groupe_ours").innerHTML = list_teddy;
+  })
+);

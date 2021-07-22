@@ -70,6 +70,9 @@ html {
   border: 2px $primaire solid;
   box-shadow: 6px 6px 6px $primaire;
   font-family: "abelregular", "Arial", "sans-serif";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*---------Header-------------*/
@@ -207,97 +210,30 @@ footer {
 
 /*------------------------------Acceuil*---------------------------*/
 .choix_produit {
-  width: 100%;
+  width: 70%;
   height: auto;
   box-sizing: border-box;
-  padding: 3%;
-  h2 {
+  img {
+    width: 100%;
+    height: 23rem;
+    object-fit: cover;
+  }
+  h2,
+  div {
     width: 100%;
     margin: 0;
     text-align: center;
     box-sizing: border-box;
-    padding: 2% 0 2% 0;
     background-color: $tertiaire;
-    border-radius: 20px 20px 0 0;
     background-color: lighten($secondaire, 18);
   }
-  .choix_produit1 {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    margin: 4% 0 10% 0;
-    a {
-      width: 30%;
-      height: 300px;
-    }
-    .choix_ours1,
-    .choix_ours2,
-    .choix_ours3 {
-      border: 2px $primaire solid;
-      box-shadow: 6px 6px 6px $primaire;
-      width: 100%;
-      height: 300px;
-      border-radius: 20px;
-      background-size: cover;
-      opacity: 0.8;
-      &:hover {
-        opacity: 1;
-        transition: opacity 0.2s ease 0s;
-      }
-      h2 {
-        border: 1px solid $primaire;
-        box-shadow: 1px 1px 1px $primaire;
-      }
-    }
-    .choix_ours1 {
-      background-image: url(image/teddy_1.jpg);
-      background-position: center;
-    }
-    .choix_ours2 {
-      background-image: url(image/teddy_2.jpg);
-      background-position: center;
-    }
-    .choix_ours3 {
-      background-image: url(image/teddy_3.jpg);
-      background-position: left;
-    }
-  }
-  .choix_produit2 {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 5%;
-    a {
-      width: 30%;
-      height: 300px;
-    }
-    .choix_ours4,
-    .choix_ours5 {
-      border: 2px $primaire solid;
-      box-shadow: 6px 6px 6px $primaire;
-      width: 100%;
-      height: 300px;
-      border-radius: 20px;
-      background-size: cover;
-      background-position: center;
-      opacity: 0.8;
-      &:hover {
-        opacity: 1;
-        transition: opacity 0.2s ease 0s;
-      }
-    }
-    .choix_ours4 {
-      background-image: url(image/teddy_4.jpg);
-      background-position: center;
-    }
-    .choix_ours5 {
-      background-image: url(image/teddy_5.jpg);
-      background-position: left;
-    }
+  .price {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 110%;
   }
 }
+
 /* -------------------------------Fin acceuil ---------------------------------*/
 
 /*------------------------------index des Ours----------------------------------*/
