@@ -280,6 +280,7 @@ footer .informations .information3 li {
   height: 23rem;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 20px 20px 0 0;
 }
 
 .choix_produit h2,
@@ -297,110 +298,25 @@ footer .informations .information3 li {
   margin-bottom: 15px;
   font-weight: bold;
   font-size: 110%;
+  margin-top: 0;
+  border-radius: 0 0 20px 20px;
+}
+
+.choix_produit a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
 }
 
 /* -------------------------------Fin acceuil ---------------------------------*/
 /*------------------------------index des Ours----------------------------------*/
-#ours_brun .titre-trans,
-#ours_creme .titre-trans,
-#ours_duo .titre-trans,
-#ours_teeshirt .titre-trans,
-#ours_doux .titre-trans {
-  color: transparent;
-}
-
-.description {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 600px;
-  margin: 8% 0 8% 0;
-  background-color: rgba(138, 159, 186, 0.5);
-  border-radius: 50px;
-  -webkit-box-shadow: 6px 6px 6px #7a92b1;
-          box-shadow: 6px 6px 6px #7a92b1;
-}
-
-.description .description_photo {
-  width: 120%;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.description .description_photo img {
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50px 0 0 50px;
-}
-
-.description .description_ours .description_intro {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 2%;
-}
-
-.description .description_ours .description_intro h2,
-.description .description_ours .description_intro p {
-  font-weight: bold;
-  font-size: 1.6rem;
-}
-
-.description .description_choix {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 2%;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.description .description_choix select,
-.description .description_choix input {
-  font-size: 1.5rem;
-}
-
-.description .prix_ours {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding-right: 2%;
-}
-
-.description .ajouter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.description .ajouter input {
-  font-size: 1.7rem;
-  border-radius: 20px;
-  font-weight: bold;
-  background-image: -webkit-gradient(linear, right top, left top, from(#9356dc), to(#f59226));
-  background-image: linear-gradient(to left, #9356dc, #f59226);
-  width: 25%;
-  height: auto;
-  color: white;
-  padding: 1%;
-  border: none;
-  -webkit-box-shadow: 6px 6px 6px #f59226;
-          box-shadow: 6px 6px 6px #f59226;
-}
-
-.description .ajouter input:hover {
-  cursor: pointer;
+#Carte {
+  border: 5px red solid;
 }
 
 /*-------------------------------------------------Panier--------------------------------*/

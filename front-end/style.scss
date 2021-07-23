@@ -217,6 +217,7 @@ footer {
     width: 100%;
     height: 23rem;
     object-fit: cover;
+    border-radius: 20px 20px 0 0;
   }
   h2,
   div {
@@ -231,86 +232,21 @@ footer {
     margin-bottom: 15px;
     font-weight: bold;
     font-size: 110%;
+    margin-top: 0;
+    border-radius: 0 0 20px 20px;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
   }
 }
 
 /* -------------------------------Fin acceuil ---------------------------------*/
 
 /*------------------------------index des Ours----------------------------------*/
-#ours_brun,
-#ours_creme,
-#ours_duo,
-#ours_teeshirt,
-#ours_doux {
-  .titre-trans {
-    color: transparent;
-  }
-}
-.description {
-  display: flex;
-  width: 100%;
-  height: 600px;
-  margin: 8% 0 8% 0;
-  background-color: rgba($secondaire, 0.5);
-  border-radius: 50px;
-  box-shadow: 6px 6px 6px darken($secondaire, 5);
-  .description_photo {
-    width: 120%;
-    height: auto;
-    display: flex;
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 50px 0 0 50px;
-    }
-  }
-  .description_ours {
-    .description_intro {
-      box-sizing: border-box;
-      padding: 2%;
-      h2,
-      p {
-        font-weight: bold;
-        font-size: 1.6rem;
-      }
-    }
-  }
-  .description_choix {
-    box-sizing: border-box;
-    padding: 2%;
-    font-weight: bold;
-    font-size: 1.5rem;
-    select,
-    input {
-      font-size: 1.5rem;
-    }
-  }
-  .prix_ours {
-    display: flex;
-    justify-content: flex-end;
-    box-sizing: border-box;
-    padding-right: 2%;
-  }
-  .ajouter {
-    display: flex;
-    justify-content: center;
-    input {
-      font-size: 1.7rem;
-      border-radius: 20px;
-      font-weight: bold;
-      background-image: linear-gradient(to left, $sixieme, $cinquieme);
-      width: 25%;
-      height: auto;
-      color: white;
-      padding: 1%;
-      border: none;
-      box-shadow: 6px 6px 6px $cinquieme;
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
+#Carte {
+  border: 5px red solid;
 }
 /*-------------------------------------------------Panier--------------------------------*/
 /*---tableau----*/

@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
-    <title>Ours brun</title>
+    <script defer src="./index.js"></script>
+    <title>Produit</title>
 </head>
 
 <body>
@@ -17,67 +17,14 @@
     <header>
 
         <h1><a href="acceuil.html"><i class="fas fa-shopping-cart"></i> Orinoco </a></h1>
-
-            <form method="post" class="formulaire_acceuil">
-                <p>
-                <label for="categorie">Toutes les catégories</label>
-                <select name="categorie" id="categorie">
-                    <option value="ours1">Ours brun</option>
-                    <option value="ours2">Ours crème</option>
-                    <option value="ours3">Ours duo</option>
-                    <option value="ours4">Ours tee-shirt</option>
-                    <option value="ours5">Ours doux</option>
-                </select>
-                </p>
-            </form>
-
             <div class="panier"><a href="panier.html"><div class="btn_panier">Panier</div></a></div>
     </header>
 
-    <section id="ours_brun">
-        <h2 class="titre-trans">.</h2>
-    <section class="description">
-        <div class="description_photo">
-            <img src="image/teddy_1.jpg" aria-label="ours_brun" alt="ours_brun">
-        </div>
-
-        <div class="description_ours">
-
-            <div class="description_intro">
-            <h2>Ours brun</h2>
-            <p>Craquez pour ce mignon petit ours ! Choisissez sa taille et décidez de lui broder son nom ! 
-                Offrez le accompagné d'une carte, ou garder le près de vous. Il saura vous donner tout son amour !
-            </p>
-            </div>
-
-
-            <div class="description_choix">
-                <form method="post" class="taille" name="choix">
-                    <p>
-                    <label for="nom_ours_brun">Son nom</label>
-                    <input type="text" name="nom" id="nom_ours_brun" placeholder="15 caractères max"/>
-                    <br/>
-                    <label for="formulaire_taille_ours_brun">Choisissez sa taille</label>
-                    <form name="formulaire_taille" id="formulaire_taille_ours_brun" required>
-                        <input type="radio" id="trente" name="taille" value="30cm">
-                        <label for="30cm">30cm</label>
-                        <input type="radio" id="cinquante" name="taille" value="50cm">
-                        <label for="50cm">50cm</label>
-                        <input type="radio" id="soixante" name="taille" value="60cm">
-                        <label for="60cm">60cm</label>
-                        <input type="radio" id="quatrevingt" name="taille" value="80cm">
-                        <label for="80cm">80cm</label>
-                    </form>
-                    </p>
-                </form>
-            </div>
-
-            <div class="prix_ours">
-                <h2 class="ours_prix">25 €</h2>
-            </div>
-
-            <div class="ajouter"><input type="button" value="Ajoutez"></div>
-        </div>
+    <section id="Carte">
+        <div id="teddy_image"></div>
+        <div id="teddy_nom"></div>
+        <div id="teddy_description"></div>
+        <div id="teddy_prix"></div>
     </section>
 </section>
 
