@@ -374,6 +374,13 @@ footer .informations .information3 li {
   margin: 0 0 20px 0;
 }
 
+#Carte #carte_ours .description_ours select {
+  border: 2px #aba598 solid;
+  font-size: 100%;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 #Carte #carte_ours .description_ours .button_ours input {
   width: 30%;
   height: 3rem;

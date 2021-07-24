@@ -278,6 +278,12 @@ footer {
         font-size: 110%;
         margin: 0 0 20px 0;
       }
+      select {
+        border: 2px $primaire solid;
+        font-size: 100%;
+        font-weight: bold;
+        margin-top: 10px;
+      }
       .button_ours {
         input {
           width: 30%;
