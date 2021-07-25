@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script defer src="./index.js"></script>
     <title>Panier</title>
 </head>
 
@@ -19,11 +18,7 @@
     <h1><a href="acceuil.html"><i class="fas fa-shopping-cart"></i> Orinoco </a></h1>
 
         <div class="acceuil"><a href="acceuil.html"><div class="btn_acceuil">Acceuil</div></a></div>
-</header>
-
-<!--bouton pour appeler les produits-->
-<button class="btn" onclick='populateTableList()'>Tout voir</button>
-<!--Fin de la commande du bouton-->
+</header> 
 
 <!--Structure du tableau-->
 <table class="tableau">
@@ -48,13 +43,13 @@
         <input type="text" name="prenom" id="prenom" required placeholder="Laurent"><br/>
 
         <label for="nom">Nom</label>
-        <input type="text" name="nom" id="prenom" required placeholder="DURANT"><br/>
+        <input type="text" name="nom" id="nom" required placeholder="DURANT"><br/>
 
         <label for="numero">Numero de voie</label>
         <input type="number" name="numero" id="numero"  placeholder="1">
 
-        <input type="radio" name="bis" id="bis" value="bis"><label for="bis">BIS</label>
-        <input type="radio" name="ter" id="ter" value="ter"><label for="ter">TER</label><br/>
+        <input type="radio" name="bister" id="bis" value="bis"><label for="bis">BIS</label>
+        <input type="radio" name="bister" id="ter" value="ter"><label for="ter">TER</label><br/>
 
         <label for="rue">Rue</label>
         <input type="text" name="rue" id="rue" required placeholder="rue des patates"><br/>
@@ -69,6 +64,7 @@
         <input type="email" name="email" id="email" required placeholder="laurent.durant@gmail.com">
     </p>
 </form>
+<button type="submit">Allons-y !!</button>
 
 <footer>
     <div class="social">
@@ -81,30 +77,32 @@
         <div class="information1">
         <h2>Pour mieux nous connaitre</h2>
         <ul>
-            <li>À propos de Orinoco</li>
-            <li>Condition générale de vente</li>
+            <li><a href="acceuil.html" rel="nofollow">À propos de Orinoco</a></li>
+            <li><a href="acceuil.html" rel="nofollow">Condition générale de vente</a></li>
         </ul>
         </div>
 
         <div class="information2">
         <h2>Moyen de paiement  Orinoco</h2>
         <ul>
-            <li>Carte de paiement</li>
-            <li>Paiement en plusieurs fois</li>
-            <li>Chèque cadeaux</li>
+            <li><a href="acceuil.html" rel="nofollow">Carte de paiement</a></li>
+            <li><a href="acceuil.html" rel="nofollow">Paiement en plusieurs fois</a></li>
+            <li><a href="acceuil.html" rel="nofollow">Chèque cadeaux</a></li>
         </ul>
         </div>
 
         <div class="information3">
         <h2>Besoin d'aide</h2>
         <ul>
-            <li>Suivre les commandes</li>
-            <li>Retour et remplacement</li>
-            <li>Tarif et option de livraison</li>
+            <li><a href="acceuil.html" rel="nofollow">Suivre les commandes</a></li>
+            <li><a href="acceuil.html" rel="nofollow">Retour et remplacement</a></li>
+            <li><a href="acceuil.html" rel="nofollow">Tarif et option de livraison</a></li>
         </ul>
         </div>
     </div>
 </footer>
 </div>
+<script src="./js/panier.js"></script>
+<script>panierChargement();</script>
 </body>
 </html>

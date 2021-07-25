@@ -410,22 +410,50 @@ footer .informations .information3 li {
   text-decoration: underline;
 }
 
-/*---fon tableau---*/
+/*--- tableau---*/
 /*---coordonnées---*/
 .coordonees_formulaire {
   font-size: 100%;
   font-weight: bold;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding-left: 2%;
+  padding: 2%;
+  background-color: #cad4e0;
+  border-radius: 20px;
+  margin-bottom: 1%;
 }
 
-.coordonees_formulaire input:focus {
-  background-color: #cad4e0;
+button {
+  background-image: -webkit-gradient(linear, right top, left top, from(#9356dc), to(#f59226));
+  background-image: linear-gradient(to left, #9356dc, #f59226);
+  border: none;
+  font-size: 130%;
+  font-weight: bold;
+  color: white;
+  padding: 1%;
+  border-radius: 20px;
+  margin-bottom: 1%;
 }
 
 /*--------------------------------------------Fin Panier---------------------------------------*/
 /*--------------------------------------------Recapitulatif-----------------------------------*/
+.recapitulatif {
+  border-radius: 20px;
+  background-color: white;
+  padding: 2%;
+  margin: 1% 0 1% 0;
+  font-weight: bold;
+}
+
+.recapitulatif #leprenom {
+  text-transform: capitalize;
+}
+
+.recapitulatif #lenom {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 /*-------------------------------------------Fin Recapitulatif--------------------------------*/
 /*-------------------------------------------Media Querries-----------------------------------*/
 /*format tablette */

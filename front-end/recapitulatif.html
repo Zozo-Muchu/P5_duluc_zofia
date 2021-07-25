@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script defer src="./index.js"></script>
     <title>Ours doux</title>
 </head>
 
@@ -22,6 +21,15 @@
         <div class="panier"><a href="panier.html"><div class="btn_panier">Panier</div></a></div>
 </header>
 
+<section class="recapitulatif">
+    <h2 class="recapitulatif_coordonnees"> Adresse de livraison</h2>
+    <p><span id="leprenom"></span> <span id="lenom"></span></p>
+    <p><span id="lenumero"> </span> <span id="leBister"></span><br/>
+    <span id="larue"></span><br/>
+    <span id="lecodepostale"></span> <span id="laville"></span></p>
+    <p>E-MAIL: <span id="lemail"></span></p>
+    
+</section>
 
 
 <footer>
@@ -35,30 +43,32 @@
         <div class="information1">
         <h2>Pour mieux nous connaitre</h2>
         <ul>
-            <li>À propos de Orinoco</li>
-            <li>Condition générale de vente</li>
+            <li><a href="acceuil.html" rel="nofollow">À propos de Orinoco</a></li>
+            <li><a href="acceuil.html" rel="nofollow">Condition générale de vente</a></li>
         </ul>
         </div>
 
         <div class="information2">
         <h2>Moyen de paiement  Orinoco</h2>
         <ul>
-            <li>Carte de paiement</li>
-            <li>Paiement en plusieurs fois</li>
-            <li>Chèque cadeaux</li>
+            <li><a href="acceuil.html" rel="nofollow">Carte de paiement</a></li>
+            <li><a href="acceuil.html" rel="nofollow">Paiement en plusieurs fois</a></li>
+            <li><a href="acceuil.html" rel="nofollow">Chèque cadeaux</a></li>
         </ul>
         </div>
 
         <div class="information3">
         <h2>Besoin d'aide</h2>
         <ul>
-            <li>Suivre les commandes</li>
-            <li>Retour et remplacement</li>
-            <li>Tarif et option de livraison</li>
+            <li><a href="acceuil.html" rel="nofollow">Suivre les commandes</a></li>
+            <li><a href="acceuil.html" rel="nofollow">Retour et remplacement</a></li>
+            <li><a href="acceuil.html" rel="nofollow">Tarif et option de livraison</a></li>
         </ul>
         </div>
     </div>
 </footer>
 </div>
+<script src="./js/panier.js"></script>
+<script>recuperationLocalStorage();</script>
 </body>
 </html>

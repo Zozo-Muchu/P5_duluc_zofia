@@ -1,4 +1,4 @@
-/*---------------- ESSAI appel de la page produits------------*/
+/*---------------- Appel de la page produits------------*/
 
 /*récupération de l'id des produits*/
 let carte_ours = "";
@@ -39,3 +39,4 @@ fetch(newURL).then((response) =>
     document.querySelector("#carte_ours").innerHTML = carte_ours;
   })
 );
+/*----------------------ajout ours au local storage-------------*/
