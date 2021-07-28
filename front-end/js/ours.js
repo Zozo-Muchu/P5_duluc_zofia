@@ -27,9 +27,17 @@ fetch(newURL).then((response) =>
     <form method="post">
     <p>
     <label for="couleur">Choisissez la Couleur</label><br/>
-    <select name="couleur" id="couleur">
+    <select name="couleur" id="couleur" aria-label="Couleurs">
     ${listcolor}
-    </select>
+    </select><br/>
+    <label for="quantite">Quantité d'ours:</label>
+    <select name="quantite" id="quantite" aria-label="Quantité">
+        <option selected value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
     </form>
     <div class="button_ours">
     <input class="button_ajout" type="button" value="Ajouter" id="btn_envoie_panier">
@@ -43,28 +51,40 @@ fetch(newURL).then((response) =>
     /*le bouton envoie le panier*/
     btnEnvoiePanier.addEventListener("click", (e) => {
       e.preventDefault();
+      const quantite = document.getElementById("quantite");
       /*récupération des valeurs des Ours*/
       let ajoutOurs = {
+        idOurs: data._id,
         nomOurs: data.name,
+        quantiteOurs: quantite.value,
         prixOurs: data.price / 100 + "€",
       };
       /*----------------------ajout ours au local storage-------------*/
       /*récupération des Ours sélectionnées*/
-      let oursDansLeLocalStorage = JSON.parse(
-        localStorage.getItem("OursAjout")
-      );
+      let oursDansLeLocalStorage = JSON.parse(localStorage.getItem("Ourson"));
+      /*fenêtre popup*/
+      const popupAjoutPanier = () => {
+        if (
+          window.confirm(
+            `${data.name} a été ajouter à votre liste d'achat ! Cliquer sur OK si vous souhaitez aller au panier, sinon ANNULER`
+          )
+        ) {
+          window.location.href = "panier.html";
+        } else {
+          window.location.href = "acceuil.html";
+        }
+      };
       /*Si produit déjà présent dans le local Storage*/
       if (oursDansLeLocalStorage) {
         oursDansLeLocalStorage.push(ajoutOurs);
         localStorage.setItem("Ourson", JSON.stringify(oursDansLeLocalStorage));
-        console.log(oursDansLeLocalStorage);
+        popupAjoutPanier();
       } else {
         /*si produit pas présent dans le local storage*/
         oursDansLeLocalStorage = [];
         oursDansLeLocalStorage.push(ajoutOurs);
         localStorage.setItem("Ourson", JSON.stringify(oursDansLeLocalStorage));
-
-        console.log(oursDansLeLocalStorage);
+        popupAjoutPanier();
       }
     });
   })

@@ -395,35 +395,105 @@ footer .informations .information3 li {
 }
 
 /*-------------------------------------------------Panier--------------------------------*/
-/*---tableau----*/
-.tableau {
-  border: 5px #a1986a solid;
+/*---tableau récaptulatif----*/
+#panier_Tableau {
+  margin-top: 2%;
   width: 100%;
   height: auto;
-  background-color: #b5ae89;
-  opacity: 0.8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px 20px 0 0;
+  background-color: #8a9fba85;
 }
 
-.tableau th {
+#panier_Tableau h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #8a9fba;
+  margin-top: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1%;
+  border-radius: 20px 20px 0 0;
+}
+
+#panier_Tableau p {
+  border: 5px #5c789c solid;
+  background-color: #8a9fba;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-weight: bold;
   font-size: 120%;
-  text-decoration: underline;
+}
+
+#panier_Tableau .panier_recapitulatif_oursons,
+#panier_Tableau .panier_total_oursons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 120%;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2%;
+}
+
+#panier_Tableau .panier_total_oursons {
+  background-color: #b5ae897d;
+}
+
+#panier_Tableau .suppression_ours {
+  background-color: #8a9fba;
+  font-size: 80%;
+  font-weight: bold;
+  padding: 0.5%;
 }
 
 /*--- tableau---*/
 /*---coordonnées---*/
+.coordonees {
+  margin-bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1%;
+  border-radius: 20px 20px 0 0;
+  background-color: #8a9fba;
+}
+
 .coordonees_formulaire {
   font-size: 100%;
   font-weight: bold;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 2%;
-  background-color: #cad4e0;
+  background-color: #8a9fba85;
   border-radius: 20px;
   margin-bottom: 1%;
 }
 
-button {
+#btn_envoie_formulaire {
   background-image: -webkit-gradient(linear, right top, left top, from(#9356dc), to(#f59226));
   background-image: linear-gradient(to left, #9356dc, #f59226);
   border: none;

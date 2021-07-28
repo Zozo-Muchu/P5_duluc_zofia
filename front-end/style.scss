@@ -30,11 +30,13 @@
 /*-----------------------charte de couleur du site------------------- */
 $primaire: #aba598;
 $secondaire: #8a9fba;
+$secondaire_fond: #8a9fba85;
 $tertiaire: white;
 $quatrieme: black;
 $cinquieme: #f59226;
 $sixieme: #9356dc;
 $septieme: #b5ae89;
+$septieme_fond: #b5ae897d;
 
 /*-----------------------fin charte de couleur---------------------------*/
 
@@ -301,31 +303,73 @@ footer {
   }
 }
 /*-------------------------------------------------Panier--------------------------------*/
-/*---tableau----*/
-.tableau {
-  border: 5px darken($septieme, 10) solid;
+/*---tableau récaptulatif----*/
+#panier_Tableau {
+  margin-top: 2%;
   width: 100%;
   height: auto;
-  background-color: $septieme;
-  opacity: 0.8;
-  th {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px 20px 0 0;
+  background-color: $secondaire_fond;
+  h2 {
+    display: flex;
+    justify-content: center;
+    background-color: $secondaire;
+    margin-top: 0;
+    box-sizing: border-box;
+    padding: 1%;
+    border-radius: 20px 20px 0 0;
+  }
+  p {
+    border: 5px darken($secondaire, 15) solid;
+    background-color: $secondaire;
+    box-sizing: border-box;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
     font-weight: bold;
     font-size: 120%;
-    text-decoration: underline;
+  }
+  .panier_recapitulatif_oursons,
+  .panier_total_oursons {
+    display: flex;
+    justify-content: space-between;
+    font-size: 120%;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 2%;
+  }
+  .panier_total_oursons {
+    background-color: $septieme_fond;
+  }
+  .suppression_ours {
+    background-color: $secondaire;
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0.5%;
   }
 }
 /*--- tableau---*/
 /*---coordonnées---*/
+.coordonees {
+  margin-bottom: 0;
+  box-sizing: border-box;
+  padding: 1%;
+  border-radius: 20px 20px 0 0;
+  background-color: $secondaire;
+}
 .coordonees_formulaire {
   font-size: 100%;
   font-weight: bold;
   box-sizing: border-box;
   padding: 2%;
-  background-color: lighten($secondaire, 20);
+  background-color: $secondaire_fond;
   border-radius: 20px;
   margin-bottom: 1%;
 }
-button {
+#btn_envoie_formulaire {
   background-image: linear-gradient(to left, $sixieme, $cinquieme);
   border: none;
   font-size: 130%;
