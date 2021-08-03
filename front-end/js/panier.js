@@ -1,4 +1,4 @@
-/*-------------récupération des Ours sélectionnées pour le Panier--------------*/
+/*-------------récupération des Ours sélectionnées pour les affiché dans le panier--------------*/
 let oursDansLeLocalStorage = JSON.parse(localStorage.getItem("Ourson"));
 /*----------------apparition produit panier---------*/
 const produitDansPanier = document.querySelector("#panier_Tableau");
@@ -18,9 +18,9 @@ if (oursDansLeLocalStorage === null || oursDansLeLocalStorage == 0) {
       structurePanierOursons +
       `
     <div class="panier_recapitulatif_oursons">
-            <div>${oursDansLeLocalStorage[j].nomOurs}</div>
-            <div>Quantité: ${oursDansLeLocalStorage[j].quantiteOurs}</div>
-            <div>${oursDansLeLocalStorage[j].prixOurs} </div>
+            <div class="ours_local_panier">${oursDansLeLocalStorage[j].nomOurs}</div>
+            <div class="ours_quantite_panier">Quantité: ${oursDansLeLocalStorage[j].quantiteOurs}</div>
+            <div class="ours_prix_panier">${oursDansLeLocalStorage[j].prixOurs} </div>
             <button class="btn_suppression_ours"><i class="fas fa-trash-alt"></i></button>
         </div>`;
   }
@@ -29,9 +29,27 @@ if (oursDansLeLocalStorage === null || oursDansLeLocalStorage == 0) {
   }
 }
 /*-------------FIN récupération des Ours sélectionnées pour le Panier--------------*/
-/*-------------BOUTON Suppression des ours---------------------*/
+
+/*-------------calcul montant du panier-----------*/
+let prixTotalCalcul = [];
+for (let u = 0; u < oursDansLeLocalStorage.length; u++) {
+  let prixTotalPanier = parseInt(oursDansLeLocalStorage[u].prixOurs);
+  /*mettre les prix dans une variable*/
+  prixTotalCalcul.push(prixTotalPanier);
+}
+/*utilisation de la méthode reduce*/
+let reducer = (accumulateur, valeurCourante) => accumulateur + valeurCourante;
+let prixTotal = prixTotalCalcul.reduce(reducer, 0);
+/* ajout du prix total dans le HTML*/
+const calcul_prix_total = `
+<div class= "calcul_prix_total"> Le prix total des oursons est : <span> ${prixTotal} €</span></div>`;
+/*insertion du code dans le HTML*/
+produitDansPanier.insertAdjacentHTML("beforeend", calcul_prix_total);
+console.log(produitDansPanier);
+
+/*---fin calcul montant panier---*/
+/*-------------BOUTON Suppression des ours un à un ---------------------*/
 let btn_suppressionOurs = document.querySelectorAll(".btn_suppression_ours");
-console.log(btn_suppressionOurs);
 for (let l = 0; l < btn_suppressionOurs.length; l++) {
   btn_suppressionOurs[l].addEventListener("click", (e) => {
     e.preventDefault();
@@ -42,56 +60,26 @@ for (let l = 0; l < btn_suppressionOurs.length; l++) {
     oursDansLeLocalStorage = oursDansLeLocalStorage.filter(
       (el) => el.idOurs !== supressionOursonSelectionner
     );
-    console.log(oursDansLeLocalStorage);
     localStorage.setItem("Ourson", JSON.stringify(oursDansLeLocalStorage));
     /*dire que l'ours a été supprimé et recharger la page*/
     alert("L'ourson a été bien supprimer du panier");
     window.location.href = "panier.html";
   });
 }
+/*-------------bouton vider le panier-------------------*/
+/*code html du bouton à afficher sur dans le panier*/
+const btn_viderPanier = `
+<button class="btn_vide_panier"> Vider le panier </button> 
+`;
+/*insertion du bouton dans le panier*/
+produitDansPanier.insertAdjacentHTML("beforeend", btn_viderPanier);
+/* sélection du bouton qui vide le panier*/
+const btn_vide_panier = document.querySelector(".btn_vide_panier");
 
-/*-------------------------COOrdonnes a rectifier---------
-function panierChargement() {
-  let btnFormulaire = document.querySelector("button");
-  btnFormulaire.addEventListener("click", () => {
-    /*récupérer les données du formulaire
-    let bister = document.querySelectorAll("input[name = 'bister']");
-
-    for (i = 0; i < bister.length; i++) {
-      if (bister[i].checked === true) {
-        leBister = bister[i].value;
-      }
-    }
-
-    /*stocker les donées dans le local storage
-    localStorage.setItem("prenom", document.querySelector("#prenom").value);
-    localStorage.setItem("nom", document.querySelector("#nom").value);
-    localStorage.setItem("numero", document.querySelector("#numero").value);
-    localStorage.setItem("bister", leBister);
-    localStorage.setItem("rue", document.querySelector("#rue").value);
-    localStorage.setItem(
-      "codepostale",
-      document.querySelector("#codepostale").value
-    );
-    localStorage.setItem("ville", document.querySelector("#ville").value);
-    localStorage.setItem("email", document.querySelector("#email").value);
-
-    location.href = "http://localhost:5500/front-end/recapitulatif.html";
-  });
-}
-
-function recuperationLocalStorage() {
-  /*récupérer les données du local storage et les faire apparaitre sur la page récapitulatif
-  document.querySelector("#leprenom").innerHTML =
-    localStorage.getItem("prenom");
-  document.querySelector("#lenom").innerHTML = localStorage.getItem("nom");
-  document.querySelector("#lenumero").innerHTML =
-    localStorage.getItem("numero");
-  document.querySelector("#leBister").innerHTML =
-    localStorage.getItem("bister");
-  document.querySelector("#larue").innerHTML = localStorage.getItem("rue");
-  document.querySelector("#lecodepostale").innerHTML =
-    localStorage.getItem("codepostale");
-  document.querySelector("#laville").innerHTML = localStorage.getItem("ville");
-  document.querySelector("#lemail").innerHTML = localStorage.getItem("email");
-}*/
+/*suppresion de "ourson" dans le local storage*/
+btn_vide_panier.addEventListener("click", (e) => {
+  e.preventDefault;
+  localStorage.removeItem("Ourson");
+  alert("le panier est vidé");
+  window.location.href = "panier.html";
+});

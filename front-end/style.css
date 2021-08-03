@@ -392,6 +392,7 @@ footer .informations .information3 li {
   background: linear-gradient(to left, #9356dc, #f59226);
   color: white;
   border: none;
+  cursor: pointer;
 }
 
 /*-------------------------------------------------Panier--------------------------------*/
@@ -412,6 +413,28 @@ footer .informations .information3 li {
           justify-content: center;
   border-radius: 20px 20px 0 0;
   background-color: #8a9fba85;
+}
+
+#panier_Tableau .ours_local_panier,
+#panier_Tableau .ours_quantite_panier,
+#panier_Tableau .ours_prix_panier {
+  width: 100%;
+  height: auto;
+  background-color: #b5ae897d;
+}
+
+#panier_Tableau .ours_local_panier {
+  padding-left: 2%;
+}
+
+#panier_Tableau .ours_prix_panier {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 2%;
 }
 
 #panier_Tableau h2 {
@@ -460,6 +483,24 @@ footer .informations .information3 li {
   padding: 2%;
 }
 
+#panier_Tableau .calcul_prix_total {
+  border: 5px #8a9fba solid;
+  background-color: #8a9fba85;
+  font-size: 160%;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 7%;
+}
+
+#panier_Tableau .calcul_prix_total span {
+  color: #955107;
+}
+
 #panier_Tableau .panier_total_oursons {
   background-color: #b5ae897d;
 }
@@ -469,6 +510,26 @@ footer .informations .information3 li {
   font-size: 80%;
   font-weight: bold;
   padding: 0.5%;
+}
+
+#panier_Tableau .btn_vide_panier {
+  width: 30%;
+  height: auto;
+  font-size: 110%;
+  margin: 2% auto 0 auto;
+  font-weight: bold;
+  color: white;
+  border-radius: 20px;
+  padding: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, right top, left top, from(#9356dc), to(#f59226));
+  background-image: linear-gradient(to left, #9356dc, #f59226);
+  border: none;
 }
 
 /*--- tableau---*/

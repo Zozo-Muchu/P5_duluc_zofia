@@ -297,6 +297,7 @@ footer {
           background: linear-gradient(to left, $sixieme, $cinquieme);
           color: $tertiaire;
           border: none;
+          cursor: pointer;
         }
       }
     }
@@ -313,6 +314,21 @@ footer {
   justify-content: center;
   border-radius: 20px 20px 0 0;
   background-color: $secondaire_fond;
+  .ours_local_panier,
+  .ours_quantite_panier,
+  .ours_prix_panier {
+    width: 100%;
+    height: auto;
+    background-color: $septieme_fond;
+  }
+  .ours_local_panier {
+    padding-left: 2%;
+  }
+  .ours_prix_panier {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
+  }
   h2 {
     display: flex;
     justify-content: center;
@@ -341,6 +357,18 @@ footer {
     box-sizing: border-box;
     padding: 2%;
   }
+  .calcul_prix_total {
+    border: 5px $secondaire solid;
+    background-color: $secondaire_fond;
+    font-size: 160%;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 7%;
+    span {
+      color: darken($cinquieme, 25);
+    }
+  }
   .panier_total_oursons {
     background-color: $septieme_fond;
   }
@@ -349,6 +377,20 @@ footer {
     font-size: 80%;
     font-weight: bold;
     padding: 0.5%;
+  }
+  .btn_vide_panier {
+    width: 30%;
+    height: auto;
+    font-size: 110%;
+    margin: 2% auto 0 auto;
+    font-weight: bold;
+    color: $tertiaire;
+    border-radius: 20px;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to left, $sixieme, $cinquieme);
+    border: none;
   }
 }
 /*--- tableau---*/
