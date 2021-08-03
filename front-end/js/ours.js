@@ -24,7 +24,7 @@ fetch(newURL).then((response) =>
     <h2>${data.name}</h2>
     <p id="prix_ours">${data.price / 100}€</p>
     <div class="colors">
-    <form method="post">
+    <form>
     <p>
     <label for="couleur">Choisissez la Couleur</label><br/>
     <select name="couleur" id="couleur" aria-label="Couleurs">
@@ -32,11 +32,6 @@ fetch(newURL).then((response) =>
     </select><br/>
     <label for="quantite">Quantité d'ours:</label>
     <select name="quantite" id="quantite" aria-label="Quantité">
-        <option selected value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
       </select>
     </form>
     <div class="button_ours">
@@ -46,18 +41,32 @@ fetch(newURL).then((response) =>
 
     document.querySelector("#carte_ours").innerHTML = carte_ours;
 
+    /* gestion des quantités d'Oursons*/
+    const htmlQuantité = `
+    <option value ="1">1</option>
+    <option value ="2">2</option>
+    <option value ="3">3</option>
+    <option value ="4">4</option>
+    <option value ="5">5</option>
+    `;
+    /*affiché le html dans la quantité d formulaire*/
+    const affichageQuantité = document.querySelector("#quantite");
+    affichageQuantité.innerHTML = htmlQuantité;
     /*sélction du bouton ajout panier*/
     const btnEnvoiePanier = document.querySelector("#btn_envoie_panier");
     /*le bouton envoie le panier*/
     btnEnvoiePanier.addEventListener("click", (e) => {
       e.preventDefault();
       const quantite = document.getElementById("quantite");
+      /*quantité ours sélectionné*/
+      const choixQuantiteOurs = affichageQuantité.value;
+      console.log(choixQuantiteOurs);
       /*récupération des valeurs des Ours*/
       let ajoutOurs = {
         idOurs: data._id,
         nomOurs: data.name,
-        quantiteOurs: quantite.value,
-        prixOurs: data.price / 100 + "€",
+        quantiteOurs: choixQuantiteOurs,
+        prixOurs: (data.price * choixQuantiteOurs) / 100 + "€",
       };
       /*----------------------ajout ours au local storage-------------*/
       /*récupération des Ours sélectionnées*/

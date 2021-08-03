@@ -541,6 +541,9 @@ footer .informations .information3 li {
   padding: 1%;
   border-radius: 20px 20px 0 0;
   background-color: #8a9fba;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .coordonees_formulaire {
@@ -561,7 +564,7 @@ footer .informations .information3 li {
   font-size: 130%;
   font-weight: bold;
   color: white;
-  padding: 1%;
+  padding: 2%;
   border-radius: 20px;
   margin-bottom: 1%;
 }

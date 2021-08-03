@@ -42,7 +42,7 @@ let reducer = (accumulateur, valeurCourante) => accumulateur + valeurCourante;
 let prixTotal = prixTotalCalcul.reduce(reducer, 0);
 /* ajout du prix total dans le HTML*/
 const calcul_prix_total = `
-<div class= "calcul_prix_total"> Le prix total des oursons est : <span> ${prixTotal} €</span></div>`;
+<div class= "calcul_prix_total"> Le prix total des Oursons est : <span> ${prixTotal} €</span></div>`;
 /*insertion du code dans le HTML*/
 produitDansPanier.insertAdjacentHTML("beforeend", calcul_prix_total);
 console.log(produitDansPanier);
@@ -83,3 +83,77 @@ btn_vide_panier.addEventListener("click", (e) => {
   alert("le panier est vidé");
   window.location.href = "panier.html";
 });
+/*-------------------fin bouton vider le panier--------*/
+/*-----------------*formulaire---------------------------*/
+const afficherFormulaire = () => {
+  /*sélection de l'éléments du DOM*/
+  const positionformulaire = document.querySelector("#panier_Tableau");
+  const htmlFormulaire = `
+<h2 class="coordonees">Coordonnées</h2>
+<form class="coordonees_formulaire">
+    <p>
+        <label for="prenom">Prénom</label>
+        <input type="text" name="prenom" id="prenom" required placeholder="Laurent"><br/>
+
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" id="nom" required placeholder="DURANT"><br/>
+
+        <label for="adresse">Adresse</label>
+        <input type="text" name="adresse" id="adresse" required placeholder="rue des patates"><br/>
+        
+        <label for="codepostale">Code Postale</label>
+        <input type="number" name="codepostale" id="codepostale" required placeholder="72000">
+
+        <label for="ville">Ville</label>
+        <input type="text" name="ville" id="ville" required placeholder="Marseille"><br/>
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" required placeholder="laurent.durant@gmail.com">
+    </p>
+    <button  type="submit" id="btn_envoie_formulaire">Allons-y !!</button>
+</form>`;
+  /*injection HTML*/
+  positionformulaire.insertAdjacentHTML("afterend", htmlFormulaire);
+};
+/*appel de la fonction pour appeler le formulaire*/
+afficherFormulaire();
+
+/*Sélection du bouton du formulaire*/
+const btnEnvoieFormulaire = document.querySelector("#btn_envoie_formulaire");
+/*--------addEventListener-------*/
+btnEnvoieFormulaire.addEventListener("click", (e) => {
+  e.preventDefault();
+  /* récupération des valeurs du formulaires*/
+  const valeursDesFormulaires = {
+    prenom: document.querySelector("#prenom").value,
+    nom: document.querySelector("#nom").value,
+    adresse: document.querySelector("#adresse").value,
+    codePostale: document.querySelector("#codepostale").value,
+    ville: document.querySelector("#ville").value,
+    email: document.querySelector("#email").value,
+  };
+  /*---- mettre le formulaire dans le local storage dans une seule clé*/
+  localStorage.setItem(
+    "valeursDesFormulaires",
+    JSON.stringify(valeursDesFormulaires)
+  );
+
+  /*les valeurs du formulaire et ls ours sélectionner envoyé vers le serveur*/
+  const envoie = {
+    oursDansLeLocalStorage,
+    valeursDesFormulaires,
+  };
+  console.log(envoie);
+  /*envoie de "envoie" vers le serveur
+  const promesseDeVente = fetch(
+    ?,
+    {
+      method: "POST",
+      body: JSON.stringify(envoie),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );*/
+});
+console.log(promesseDeVente);

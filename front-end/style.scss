@@ -401,6 +401,7 @@ footer {
   padding: 1%;
   border-radius: 20px 20px 0 0;
   background-color: $secondaire;
+  display: flex;
 }
 .coordonees_formulaire {
   font-size: 100%;
@@ -417,7 +418,7 @@ footer {
   font-size: 130%;
   font-weight: bold;
   color: $tertiaire;
-  padding: 1%;
+  padding: 2%;
   border-radius: 20px;
   margin-bottom: 1%;
 }
