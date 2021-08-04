@@ -85,9 +85,38 @@ fetch(newURL).then((response) =>
       };
       /*Si produit déjà présent dans le local Storage*/
       if (oursDansLeLocalStorage) {
-        oursDansLeLocalStorage.push(ajoutOurs);
-        localStorage.setItem("Ourson", JSON.stringify(oursDansLeLocalStorage));
-        popupAjoutPanier();
+        /*variable for pour parcourir le tableau */
+        var oursExiste = false;
+        /*position de l"ours à modifier dans le tableau*/
+        var oursPositionIndex = 0;
+        /*parcourir le tableau */
+        /* faire une boucle For et comparer les id avec ceux déjà présent (ajout ours)*/
+        for (let index = 0; index < oursDansLeLocalStorage.length; index++) {
+          if (oursDansLeLocalStorage[index].idOurs == ajoutOurs.idOurs) {
+            oursExiste = true;
+            oursPositionIndex = index;
+          }
+        }
+        if (oursExiste == false) {
+          oursDansLeLocalStorage.push(ajoutOurs);
+          localStorage.setItem(
+            "Ourson",
+            JSON.stringify(oursDansLeLocalStorage)
+          );
+          popupAjoutPanier();
+        } else {
+          /*manipulation de tableu avec insertion d'objet*/
+          ajoutOurs.quantiteOurs =
+            parseInt(oursDansLeLocalStorage[oursPositionIndex].quantiteOurs) +
+            parseInt(ajoutOurs.quantiteOurs);
+          oursDansLeLocalStorage.splice(oursPositionIndex, 1);
+          oursDansLeLocalStorage.push(ajoutOurs);
+          localStorage.setItem(
+            "Ourson",
+            JSON.stringify(oursDansLeLocalStorage)
+          );
+          popupAjoutPanier();
+        }
       } else {
         /*si produit pas présent dans le local storage*/
         oursDansLeLocalStorage = [];
