@@ -424,19 +424,13 @@ footer {
 }
 /*--------------------------------------------Fin Panier---------------------------------------*/
 /*--------------------------------------------Recapitulatif-----------------------------------*/
-.recapitulatif {
+#recap {
   border-radius: 20px;
   background-color: white;
   padding: 2%;
   margin: 1% 0 1% 0;
   font-weight: bold;
-  #leprenom {
-    text-transform: capitalize;
-  }
-  #lenom {
-    font-weight: bold;
-    text-transform: uppercase;
-  }
+  border: 5px red solid;
 }
 /*-------------------------------------------Fin Recapitulatif--------------------------------*/
 

@@ -45,7 +45,6 @@ const calcul_prix_total = `
 <div class= "calcul_prix_total"> Le prix total des Oursons est : <span> ${prixTotal} €</span></div>`;
 /*insertion du code dans le HTML*/
 produitDansPanier.insertAdjacentHTML("beforeend", calcul_prix_total);
-console.log(produitDansPanier);
 
 /*---fin calcul montant panier---*/
 /*-------------BOUTON Suppression des ours un à un ---------------------*/
@@ -100,9 +99,6 @@ const afficherFormulaire = () => {
 
         <label for="adresse">Adresse</label>
         <input type="text" name="adresse" id="adresse" required placeholder="rue des patates"><br/>
-        
-        <label for="codepostale">Code Postale</label>
-        <input type="number" name="codepostale" id="codepostale" required placeholder="72000">
 
         <label for="ville">Ville</label>
         <input type="text" name="ville" id="ville" required placeholder="Marseille"><br/>
@@ -118,43 +114,86 @@ const afficherFormulaire = () => {
 /*appel de la fonction pour appeler le formulaire*/
 afficherFormulaire();
 
-/*Sélection du bouton du formulaire*/
-const btnEnvoieFormulaire = document.querySelector("#btn_envoie_formulaire");
-/*--------addEventListener-------*/
-btnEnvoieFormulaire.addEventListener("click", (e) => {
-  e.preventDefault();
-  /* récupération des valeurs du formulaires*/
-  const valeursDesFormulaires = {
-    prenom: document.querySelector("#prenom").value,
-    nom: document.querySelector("#nom").value,
-    adresse: document.querySelector("#adresse").value,
-    codePostale: document.querySelector("#codepostale").value,
-    ville: document.querySelector("#ville").value,
-    email: document.querySelector("#email").value,
-  };
-  /*---- mettre le formulaire dans le local storage dans une seule clé*/
-  localStorage.setItem(
-    "valeursDesFormulaires",
-    JSON.stringify(valeursDesFormulaires)
-  );
+/*Envoie des donées du formulaire*/
 
-  /*les valeurs du formulaire et ls ours sélectionner envoyé vers le serveur*/
-  const envoie = {
-    oursDansLeLocalStorage,
-    valeursDesFormulaires,
-  };
-  console.log(envoie);
-  /*envoie de "envoie" vers le serveur
-  const promesseDeVente = fetch(
-    ?,
-    {
-      method: "POST",
-      body: JSON.stringify(envoie),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({})
+function envoieFormulaire() {
+  let formulaire = document.getElementsByClassName("coordonees_formulaire");
+  formulaire[0].addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (formulaireValide(prenom, nom, adresse, ville, email) != true) {
+      alert(formulaireValide(prenom, nom, adresse, ville, email));
+    } else {
+      /*fonction qui renvoie vers le backend*/
+      let prenom = document.querySelector("#prenom").value;
+      let nom = document.querySelector("#nom").value;
+      let adresse = document.querySelector("#adresse").value;
+      let ville = document.querySelector("#ville").value;
+      let email = document.querySelector("#email").value;
+      envoieVersAPI(
+        prenom,
+        nom,
+        adresse,
+        ville,
+        email,
+        oursDansLeLocalStorage,
+        "http://localhost:3000/api/teddies"
+      );
     }
-  );*/
-});
-console.log(promesseDeVente);
+  });
+}
+function formulaireValide(idPrenom, idNom, idAdresse, idVille, idEmail) {
+  if (idPrenom.value == "") {
+    return "Votre prénom est demandé";
+  }
+  if (idNom.value == "") {
+    return "Votre Nom est demandé";
+  }
+  if (idAdresse.value == "") {
+    return "Votre adresse d'expédition est demandé";
+  }
+  if (idVille.value == "") {
+    return "Renseignez votre ville";
+  }
+  if (idEmail.value == "") {
+    return "Renseignez une adresse e-mail valide";
+  }
+  return true;
+}
+function envoieVersAPI(
+  yprenom,
+  ynom,
+  yadresse,
+  yville,
+  yemail,
+  tabOurs,
+  postUrl
+) {
+  let idTabOurs = tabOurs.map(
+    (i) => i.id
+  ); /*création d'un tableau pour les id du*/
+  let msg = {
+    contact: {
+      firstName: yprenom,
+      lastName: ynom,
+      adress: yadresse,
+      city: yville,
+      email: yemail,
+    },
+    products: idTabOurs,
+  };
+  let options = {
+    method: "POST",
+    body: JSON.stringify(msg),
+    headers: new Headers({ "Content-Type": "application/json" }),
+  };
+  fetch(postUrl + "/order", options)
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      localStorage.setItem("idCommande", res["orderId"]);
+      localStorage.setItem("total", prixTotal);
+      window.location.href =
+        "http://localhost:5500/front-end/recapitulatif.html";
+    })
+    .catch((error) => console.log(error));
+}
