@@ -192,8 +192,7 @@ function envoieVersAPI(
       console.log(res);
       localStorage.setItem("idCommande", res["orderId"]);
       localStorage.setItem("total", prixTotal);
-      window.location.href =
-        "http://localhost:5500/front-end/recapitulatif.html";
+      window.location.href = "/front-end/recapitulatif.html";
     })
     .catch((error) => console.log(error));
 }
