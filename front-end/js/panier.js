@@ -135,47 +135,54 @@ function envoieFormulaire() {
         adresse,
         ville,
         email,
-        oursDansLeLocalStorage,
         "http://localhost:3000/api/teddies"
       );
     }
   });
 }
+/* regex prénom et nom   ("^[A-Z][A-Za-zéèê-]+$")*/
 function formulaireValide(idPrenom, idNom, idAdresse, idVille, idEmail) {
+  let myRegex = /^[a-zA-Z-\s]+$/;
+  let mysecondRegex =
+    /^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
   if (idPrenom.value == "") {
-    return "Votre prénom est demandé";
+    return "Votre prénom n'est pas renseigné";
+  } else if (myRegex.test(idPrenom.value) == false) {
+    return "Votre prénom n'est pas correctement renseigné";
   }
   if (idNom.value == "") {
     return "Votre Nom est demandé";
+  } else if (myRegex.test(idNom.value) == false) {
+    return "Votre Nom n'est pas correctement renseigné";
   }
   if (idAdresse.value == "") {
     return "Votre adresse d'expédition est demandé";
   }
   if (idVille.value == "") {
     return "Renseignez votre ville";
+  } else if (myRegex.test(idVille.value) == false) {
+    return "Votre prénom n'est pas correctement renseigné";
   }
   if (idEmail.value == "") {
     return "Renseignez une adresse e-mail valide";
+  } else if (mysecondRegex.test(idPrenom.value) == false) {
+    return "Votre prénom n'est pas correctement renseigné";
   }
   return true;
 }
-function envoieVersAPI(
-  yprenom,
-  ynom,
-  yadresse,
-  yville,
-  yemail,
-  tabOurs,
-  postUrl
-) {
+
+function envoieVersAPI(yprenom, ynom, yadresse, yville, yemail, postUrl) {
+  let localOurs = localStorage.getItem("Ourson");
+  let tabOurs = JSON.parse(localOurs);
   let idTabOurs = tabOurs.map(
-    (i) => i.id
+    (i) => i.idOurs
   ); /*création d'un tableau pour les id du*/
+  console.log(idTabOurs);
   let msg = {
     contact: {
       firstName: yprenom,
       lastName: ynom,
-      adress: yadresse,
+      address: yadresse,
       city: yville,
       email: yemail,
     },
@@ -192,6 +199,7 @@ function envoieVersAPI(
       console.log(res);
       localStorage.setItem("idCommande", res["orderId"]);
       localStorage.setItem("total", prixTotal);
+      localStorage.removeItem("Ourson");
       window.location.href = "/front-end/recapitulatif.html";
     })
     .catch((error) => console.log(error));
