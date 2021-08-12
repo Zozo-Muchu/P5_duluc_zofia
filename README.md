@@ -1,6 +1,6 @@
 # P5_duluc_zofia
 
-##Projet 5 : Construisez un site de e-commerce
+##**_Projet 5 : Construisez un site de e-commerce_**
 
 _Je vous invite à lire cette fiche avant le lancement du site Orinoco. En suivant les étapes suivantes, la navigation sur le site sera plus optimale._
 
