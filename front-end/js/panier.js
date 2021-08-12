@@ -140,11 +140,11 @@ function envoieFormulaire() {
     }
   });
 }
-/* regex prénom et nom   ("^[A-Z][A-Za-zéèê-]+$")*/
+/* regex prénom et nom   ("/^[A-Z][A-Za-zéèê-]+$/")*/
 function formulaireValide(idPrenom, idNom, idAdresse, idVille, idEmail) {
-  let myRegex = /^[a-zA-Z-\s]+$/;
-  let mysecondRegex =
-    /^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+  let myRegex =
+    /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/;
+  let mysecondRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   if (idPrenom.value == "") {
     return "Votre prénom n'est pas renseigné";
   } else if (myRegex.test(idPrenom.value) == false) {
@@ -161,12 +161,12 @@ function formulaireValide(idPrenom, idNom, idAdresse, idVille, idEmail) {
   if (idVille.value == "") {
     return "Renseignez votre ville";
   } else if (myRegex.test(idVille.value) == false) {
-    return "Votre prénom n'est pas correctement renseigné";
+    return "Votre ville n'est pas correctement renseigné";
   }
   if (idEmail.value == "") {
     return "Renseignez une adresse e-mail valide";
-  } else if (mysecondRegex.test(idPrenom.value) == false) {
-    return "Votre prénom n'est pas correctement renseigné";
+  } else if (mysecondRegex.test(idEmail.value) == false) {
+    return "Votre email n'est pas correctement renseigné";
   }
   return true;
 }

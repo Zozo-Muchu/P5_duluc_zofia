@@ -577,7 +577,31 @@ footer .informations .information3 li {
   padding: 2%;
   margin: 1% 0 1% 0;
   font-weight: bold;
-  border: 5px red solid;
+  border: 5px #8a9fba solid;
+}
+
+#recap h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#recap span {
+  color: #ad5e08;
+  font-size: 120%;
+}
+
+#recap .remerciement {
+  font-size: 110%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /*-------------------------------------------Fin Recapitulatif--------------------------------*/
